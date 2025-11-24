@@ -19,4 +19,30 @@ class UserScoreRepository {
             "新增資料失敗：${e.message}"
         }
     }
+
+    suspend fun updateUser(userScore: UserScoreModel): String {
+        return try {
+            db.collection("UserScore")
+                .document(userScore.user)
+                .set(userScore)
+                .await()
+            "新增/異動資料成功！Document ID:\n ${userScore.user}"
+        } catch (e: Exception) {
+            // await() 失敗時會拋出例外，在這裡捕捉並處理
+            "新增/異動資料失敗：${e.message}"
+        }
+    }
+    suspend fun deleteUser(userScore: UserScoreModel): String {
+        return try {
+            db.collection("UserScore")
+                .document(userScore.user)
+                .delete()
+                .await()
+            "刪除資料成功！Document ID:\n ${userScore.user}"
+        } catch (e: Exception) {
+            // await() 失敗時會拋出例外，在這裡捕捉並處理
+            "刪除資料失敗：${e.message}"
+        }
+    }
+
 }

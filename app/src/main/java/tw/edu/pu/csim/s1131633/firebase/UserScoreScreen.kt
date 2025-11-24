@@ -10,7 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 
-@Composable
+/*@Composable
 fun UserScoreScreen( userScoreViewModel: UserScoreViewModel = viewModel()
 ) {
     Column (
@@ -27,4 +27,5 @@ fun UserScoreScreen( userScoreViewModel: UserScoreViewModel = viewModel()
         }
         Text(userScoreViewModel.message)
     }
-}
+
+}*/
