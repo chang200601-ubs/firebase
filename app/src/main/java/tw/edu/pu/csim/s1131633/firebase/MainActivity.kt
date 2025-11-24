@@ -107,9 +107,9 @@ fun UserScoreScreen( userScoreViewModel: UserScoreViewModel = viewModel()
         Button(onClick = {
             // 在按鈕點擊時，直接呼叫 ViewModel 的函式
             var userScore = UserScoreModel("子青", 21)
-            userScoreViewModel.deleteUser(userScore)
+            userScoreViewModel.orderUser(userScore)
         }) {
-            Text("刪除資料")
+            Text("查詢前三資料")
         }
 
         Text(userScoreViewModel.message)
